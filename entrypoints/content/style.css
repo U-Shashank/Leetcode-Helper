@@ -1,0 +1,207 @@
+/* Content CSS - Hello from content styles! 🎨 */
+
+/* Overlay styles for LeetCode */
+.leetcode-helper-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .leetcode-helper-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .leetcode-helper-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  
+  .leetcode-helper-overlay.active .leetcode-helper-modal {
+    transform: scale(1);
+  }
+  
+  /* Floating helper button */
+  .leetcode-helper-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: none;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .leetcode-helper-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
+  }
+  
+  .leetcode-helper-float:active {
+    transform: scale(0.95);
+  }
+  
+  /* Notification styles */
+  .leetcode-helper-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    max-width: 300px;
+    border-left: 4px solid #4CAF50;
+    animation: slideInFromRight 0.3s ease-out;
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .leetcode-helper-notification.error {
+    border-left-color: #f44336;
+  }
+  
+  .leetcode-helper-notification.warning {
+    border-left-color: #ff9800;
+  }
+  
+  .leetcode-helper-notification.info {
+    border-left-color: #2196F3;
+  }
+  
+  /* Progress bar overlay */
+  .leetcode-helper-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(76, 175, 80, 0.2);
+    z-index: 10000;
+    overflow: hidden;
+  }
+  
+  .leetcode-helper-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+  }
+  
+  .leetcode-helper-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* LeetCode specific enhancements */
+  .leetcode-helper-problem-highlight {
+    border: 2px solid #4CAF50 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .leetcode-helper-solved-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1000;
+  }
+  
+  /* Code editor enhancements */
+  .leetcode-helper-code-hint {
+    position: absolute;
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: #4CAF50;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .leetcode-helper-notification {
+      background: #2d2d2d;
+      color: #fff;
+    }
+    
+    .leetcode-helper-modal {
+      background: #2d2d2d;
+      color: #fff;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .leetcode-helper-float,
+    .leetcode-helper-notification,
+    .leetcode-helper-overlay,
+    .leetcode-helper-progress {
+      display: none !important;
+    }
+  }

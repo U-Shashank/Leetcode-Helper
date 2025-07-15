@@ -1,0 +1,165 @@
+/* Popup CSS - Hello from styles! 🎨 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+.popup-container {
+  width: 320px;
+  min-height: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.content {
+  padding: 20px;
+}
+
+.status-section,
+.actions-section,
+.info-section {
+  margin-bottom: 20px;
+}
+
+.status-section h3,
+.actions-section h3,
+.info-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+
+#status-message {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  border-left: 4px solid #ddd;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  min-width: 120px;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#current-url {
+  font-size: 12px;
+  color: #666;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  word-break: break-all;
+  border-left: 4px solid #2196F3;
+}
+
+#problem-count {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4CAF50;
+  background: #f1f8e9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 4px solid #4CAF50;
+}
+
+.footer {
+  background: #f8f9fa;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 350px) {
+  .popup-container {
+    width: 280px;
+    margin: 10px;
+  }
+  
+  .action-btn {
+    width: 100%;
+    margin-right: 0;
+  }
+}
